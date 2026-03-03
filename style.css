@@ -1,0 +1,1042 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================= */
+/* GLOBAL VARIABLES & RESETS */
+/* ========================= */
+:root {
+    /* Color Palette: Academic / Think Tank */
+    --navy-blue: #1A365D;
+    --slate-gray: #4A5568;
+    --light-gray: #EDF2F7;
+    --white: #FFFFFF;
+    --accent-blue: #3182CE;
+}
+
+/* Removes default spacing added by browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif; /* Serif for readability */
+    color: var(--slate-gray);
+    background-color: var(--light-gray);
+    line-height: 1.6;
+}
+
+h1, h2, h3, nav {
+    font-family: 'Inter', sans-serif; /* Clean Sans-Serif for headers */
+    color: var(--navy-blue);
+}
+
+/* A reusable container class to keep everything centered and neat */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ========================= */
+/* HEADER & NAVIGATION STYLES*/
+/* ========================= */
+.site-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow underneath */
+    position: sticky;
+    top: 0; /* Keeps nav at top when scrolling */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.site-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--navy-blue);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none; /* Removes bullet points */
+    gap: 30px; /* Space between links */
+}
+
+.main-nav a {
+    text-decoration: none; /* Removes underlines */
+    color: var(--slate-gray);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover, 
+.main-nav a.active {
+    color: var(--accent-blue);
+}
+
+
+/* ========================= */
+/* HERO SECTION STYLES       */
+/* ========================= */
+.hero-section {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centers the text block */
+    color: var(--light-gray);
+}
+
+/* The Call to Action Button */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2b6cb0; /* Slightly darker blue on hover */
+}
+
+/* ========================= */
+/* OVERVIEW SECTION STYLES   */
+/* ========================= */
+.overview-section {
+    padding: 80px 0 40px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* ========================= */
+/* DIRECTORY GRID STYLES     */
+/* ========================= */
+.directory-section {
+    padding: 40px 0 80px 0;
+}
+
+/* CSS Grid allows us to easily make a 2x2 layout */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns equal width */
+    gap: 30px; /* Space between the cards */
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: var(--white);
+    border-radius: 8px; /* Soft rounded edges */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Soft drop shadow */
+    border: 1px solid #E2E8F0; /* Very light gray border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+/* Make the card pop up slightly when you hover over it */
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card-content {
+    padding: 40px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--navy-blue);
+}
+
+.card p {
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.card-link {
+    display: inline-block;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* ========================= */
+/* FOOTER STYLES             */
+/* ========================= */
+.site-footer {
+    background-color: var(--navy-blue);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* ========================= */
+/* STATS / NUMBERS STYLES    */
+/* ========================= */
+.stats-section {
+    background-color: var(--navy-blue); /* Dark background to break up the page */
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around; /* Spreads the 3 numbers out perfectly evenly */
+    text-align: center;
+    flex-wrap: wrap; /* Makes sure it looks good if the screen shrinks */
+    gap: 30px;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem; /* Massive text to catch the eye */
+    font-weight: 700;
+    color: var(--accent-blue); /* The bright blue pops on the dark navy */
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* ========================= */
+/* CTA SECTION STYLES        */
+/* ========================= */
+.cta-section {
+    background-color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+    border-top: 1px solid #E2E8F0; /* A tiny gray line to separate it from the stats */
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    color: var(--slate-gray);
+    font-size: 1.1rem;
+}
+
+/* ========================= */
+/* CITATIONS STYLES          */
+/* ========================= */
+.citations-section {
+    background-color: var(--light-gray);
+    padding: 40px 0;
+    border-top: 1px solid #E2E8F0;
+}
+
+.citations-section h4 {
+    font-size: 1rem;
+    color: var(--navy-blue);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.citations-section ol {
+    padding-left: 20px; /* Indents the numbered list */
+}
+
+.citations-section li {
+    font-size: 0.85rem; /* Smaller text for footnotes */
+    color: var(--slate-gray);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Adjust the superscript numbers in the stats section to look neat */
+.stat-label sup {
+    font-size: 0.6rem;
+    vertical-align: super;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVENESS     */
+/* ========================= */
+@media (max-width: 768px) {
+    /* Make the 4 cards stack in a single column on small screens */
+    .cards-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Shrink the huge hero title slightly so it fits on phone screens */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    /* Bring the navigation links closer together */
+    .main-nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================= */
+/* INTERNAL PAGE STYLES      */
+/* ========================= */
+
+/* The smaller hero banner at the top of sub-pages */
+.page-header {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-blue);
+}
+
+.page-header h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--light-gray);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* The narrow container for easy reading */
+.reading-container {
+    max-width: 800px; /* Narrower than the 1100px home container! */
+    margin: 60px auto;
+    padding: 0 20px;
+    background-color: var(--white);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--navy-blue);
+    border-left: 4px solid var(--accent-blue); /* A nice blue line next to the title */
+    padding-left: 15px;
+}
+
+.content-block p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Makes the first paragraph of a section stand out */
+.lead-text {
+    font-size: 1.2rem !important;
+    font-weight: 700;
+    color: var(--slate-gray);
+}
+
+/* Academic bullet point lists */
+.academic-list {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.academic-list li {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* The line between Background and Objectives */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #E2E8F0;
+    margin: 40px 0;
+}
+
+/* ========================= */
+/* VISUAL BREAKS (QUOTES, ETC)*/
+/* ========================= */
+
+/* Editorial Image Styling */
+.editorial-figure {
+    margin: 25px 0; /* Adds space above and below the image */
+}
+
+.editorial-img {
+    width: 100%; /* Makes image fill the reading container perfectly */
+    height: auto;
+    border-radius: 8px; /* Soft edges to match our cards */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle depth */
+}
+
+.image-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #718096;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Callout Box Styling */
+.callout-box {
+    background-color: #F7FAFC; /* A very soft blue/gray */
+    border: 1px solid #E2E8F0;
+    border-left: 5px solid var(--accent-blue); /* Strong blue line on the left */
+    padding: 20px 25px;
+    margin: 35px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.callout-box h4 {
+    font-family: 'Inter', sans-serif;
+    color: var(--navy-blue);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.callout-box p {
+    margin-bottom: 0; /* Removes bottom spacing so it fits snug in the box */
+    font-size: 0.95rem;
+}
+
+/* Pull-Quote Styling */
+.pull-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    line-height: 1.4;
+    margin: 40px 0;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent-blue);
+    font-style: italic;
+}
+
+/* ========================= */
+/* METHODOLOGY PAGE STYLES   */
+/* ========================= */
+
+/* Process Timeline Styling */
+.process-timeline {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #F8FAFC;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.process-step:last-child {
+    margin-bottom: 0; /* Removes extra space at the very bottom */
+}
+
+.step-number {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes it a perfect circle */
+    flex-shrink: 0; /* Prevents the circle from squishing */
+    margin-right: 20px;
+}
+
+.step-content h4 {
+    color: var(--navy-blue);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    padding-top: 5px; /* Aligns the text with the middle of the circle */
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Findings Grid Styling */
+.findings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.finding-card {
+    background-color: var(--white);
+    border: 1px solid #E2E8F0;
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid var(--navy-blue); /* A nice bold line at the top */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.finding-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.finding-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--navy-blue);
+}
+
+.finding-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Mobile Responsiveness for Findings */
+@media (max-width: 600px) {
+    .findings-grid {
+        grid-template-columns: 1fr; /* Stacks the finding cards on small phone screens */
+    }
+}
+
+/* ========================= */
+/* AI ROLE PAGE STYLES       */
+/* ========================= */
+
+.threat-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.threat-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden; /* Keeps the top header neat */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.threat-header {
+    background-color: #FFF5F5; /* Very pale warning red */
+    border-bottom: 1px solid #FED7D7;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.threat-header h3 {
+    color: #C53030; /* Deep warning red */
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.threat-body {
+    background-color: var(--white);
+    padding: 25px;
+}
+
+.threat-body p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.small-list li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+/* Mobile check for threat cards */
+@media (max-width: 600px) {
+    .threat-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ========================= */
+/* DATA TABLE & DIAGRAM      */
+/* ========================= */
+
+/* Academic Table Styling */
+.table-container {
+    overflow-x: auto; /* Lets the table scroll horizontally on small phones! */
+    margin: 30px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.academic-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes ugly gaps between borders */
+    background-color: var(--white);
+    text-align: left;
+}
+
+.academic-table th {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: 15px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+}
+
+.academic-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 0.95rem;
+}
+
+/* Adds a very faint background color to every other row for easy reading */
+.academic-table tbody tr:nth-child(even) {
+    background-color: #F8FAFC;
+}
+
+.danger-text {
+    color: #C53030;
+    font-weight: 700;
+}
+
+/* Pipeline Diagram Styling */
+.pipeline-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F7FAFC;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    margin-top: 30px;
+}
+
+.pipeline-box {
+    background-color: var(--white);
+    border: 1px solid #CBD5E0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 28%; /* Keeps them all equal size */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.alert-box {
+    border-color: #FC8181;
+    background-color: #FFF5F5;
+}
+
+.pipeline-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pipeline-box strong {
+    display: block;
+    color: var(--navy-blue);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 5px;
+}
+
+.pipeline-box span {
+    font-size: 0.85rem;
+    color: var(--slate-gray);
+    line-height: 1.4;
+}
+
+.pipeline-arrow {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+/* Mobile check for the pipeline */
+@media (max-width: 768px) {
+    .pipeline-diagram {
+        flex-direction: column; /* Stacks the boxes top-to-bottom on phones */
+        gap: 20px;
+    }
+    .pipeline-arrow {
+        transform: rotate(90deg); /* Points the arrows downward on phones! */
+    }
+    .pipeline-box {
+        width: 100%;
+    }
+}
+
+/* ========================= */
+/* IMPACT & SOLUTIONS STYLES */
+/* ========================= */
+
+/* Impact Grid */
+.impact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.impact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #FFF5F5;
+    border-left: 4px solid #C53030;
+    padding: 25px;
+    border-radius: 0 8px 8px 0;
+}
+
+.impact-item svg {
+    flex-shrink: 0; /* Keeps the icon from squishing */
+    margin-top: 3px;
+}
+
+.impact-item h4 {
+    color: #C53030;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.impact-item p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Solutions Framework (The 3 Pillars) */
+.solutions-framework {
+    margin-top: 40px;
+}
+
+.solution-pillar {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: var(--white);
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.solution-pillar:last-child {
+    margin-bottom: 0;
+}
+
+.pillar-number {
+    background-color: #38B2AC; /* A calming, "solution-oriented" teal color */
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.pillar-text {
+    padding: 25px;
+}
+
+.pillar-text h4 {
+    color: var(--navy-blue);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.pillar-text p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--slate-gray);
+}
+
+/* Mobile check for Solutions */
+@media (max-width: 600px) {
+    .impact-item {
+        flex-direction: column;
+    }
+    .solution-pillar {
+        flex-direction: column;
+    }
+    .pillar-number {
+        min-height: 60px;
+        padding: 10px;
+    }
+}
+
+/* ========================= */
+/* POLICY TAGS (IMPACT PAGE) */
+/* ========================= */
+
+.tag-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.policy-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px; /* Makes them look like modern UI "pills" */
+}
+
+/* Different colors for different stakeholders */
+.tag-tech {
+    background-color: #EBF8FF;
+    color: #2B6CB0; /* Blue for Tech */
+    border: 1px solid #BEE3F8;
+}
+
+.tag-gov {
+    background-color: #F0FFF4;
+    color: #2F855A; /* Green for Government/Law */
+    border: 1px solid #C6F6D5;
+}
+
+.tag-edu {
+    background-color: #FAF5FF;
+    color: #6B46C1; /* Purple for Education/Society */
+    border: 1px solid #E9D8FD;
+}
+
+/* ========================= */
+/* INTERACTIVE SCANNER       */
+/* ========================= */
+.scanner-section {
+    background-color: #F7FAFC;
+    padding: 80px 0;
+    border-top: 1px solid #E2E8F0;
+}
+
+.scanner-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.scanner-header h2 {
+    font-size: 2rem;
+    color: var(--navy-blue);
+    margin-bottom: 15px;
+}
+
+/* The Fake Post Container */
+.mock-post {
+    background-color: var(--white);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent; /* Hidden border ready for red color */
+    transition: border-color 0.3s ease;
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    color: #1A202C;
+    line-height: 1.5;
+}
+
+/* === THE HIDDEN LAYER (Container for Flags) === */
+.analysis-layer {
+    display: none; /* This hides everything by default */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #E2E8F0;
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+/* === THE RED FLAGS (Now they are list items, not bubbles) === */
+.red-flag {
+    display: block; /* They are always "on", but their parent hides them */
+    background-color: #FFF5F5;
+    border-left: 4px solid #C53030; /* Red line on left */
+    color: #2D3748;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.red-flag strong {
+    color: #C53030;
+    display: block; /* Forces the bold text to its own line */
+    margin-bottom: 4px;
+}
+
+/* === THE SCAN BUTTON === */
+.btn-scan {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-scan:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* === ACTIVE STATE (When Scanned) === */
+/* These styles trigger when JS adds the 'scanned' class */
+
+.mock-post.scanned {
+    border-color: #FC8181;
+    background-color: #fffafa;
+}
+
+.mock-post.scanned .avatar {
+    border-color: #E53E3E; /* Turns profile pic border red */
+}
+
+.mock-post.scanned .analysis-layer {
+    display: block; /* THIS REVEALS THE FLAGS! */
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= */
+/* FAKE VIDEO PLAYER STYLES  */
+/* ========================= */
+.video-container {
+    position: relative;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the image stays inside the rounded corners */
+    border: 1px solid #333;
+    background-color: black;
+}
+
+.fake-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.8; /* Makes it look slightly dark/cinematic */
+}
+
+.live-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #E53E3E; /* Live Red */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Optional: A fake play button in the center */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none; /* Lets clicks pass through */
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Media Literacy Page Accents */
+.tag-edu {
+    background-color: #F0FFF4;
+    color: #2F855A;
+    border: 1px solid #C6F6D5;
+}
